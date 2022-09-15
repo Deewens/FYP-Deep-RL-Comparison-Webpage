@@ -1,4 +1,12 @@
-.Header {
-    background: #2B303A;
-    height: 45px;
+.header {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 5%);
+    height: 55px;
+    position: absolute;
+}
+
+.header__navbar {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
 }

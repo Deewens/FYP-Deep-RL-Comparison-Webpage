@@ -1,0 +1,9 @@
+.menu-item {
+    height: 55px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: larger;
+}

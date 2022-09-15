@@ -1,0 +1,50 @@
+.hero {
+    background-image: url("/src/assets/img/hero-background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero__photo img {
+    border-radius: 50%;
+    width: 350px;
+    height: auto;
+}
+
+.hero__main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+     color: white;
+}
+
+.hero__catchphrase {
+    width: 450px;
+}
+
+.hero__title {
+    font-weight: normal;
+    font-size: xxx-large;
+}
+
+.hero__subtitle {
+    font-size: larger;
+}
+
+.hero__title--bold {
+    font-weight: bold;
+}
+
+.hero__socials {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
+    color: #047585;
+}

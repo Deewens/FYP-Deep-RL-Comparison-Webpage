@@ -1,0 +1,17 @@
+.card {
+
+}
+
+.card__icon {
+    color: var(--secondary-color);
+}
+
+.card__title {
+    font-size: x-large;
+    color: white;
+}
+
+.card__description {
+    color: rgba(255, 255, 255, 0.5);
+}
+

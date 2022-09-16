@@ -1,11 +1,19 @@
 .landing-section {
-    height: 50vh;
+    padding: 60px 0;
 }
 
-.landing-section--color-secondary {
-    background-color: #047585;
+.landing-section__title {
+    margin-top: 0;
+    margin-left: 280px;
+    font-size: 4ex;
+    color: white;
+    font-weight: normal;
 }
 
 .landing-section--color-primary {
-    background-color: #1F2C3F;
+    background-color: var(--primary-color);
+}
+
+.landing-section--color-secondary {
+    background-color: var(--secondary-color);
 }

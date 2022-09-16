@@ -1,0 +1,21 @@
+.skill-section {
+    box-shadow: 0 -0.5px 50px 5px rgba(0, 0, 0, 0.5);
+}
+
+.cards-container {
+    margin: auto 280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 360px;
+    height: 250px;
+}
+
+.timeline-item ul {
+    list-style: circle inside;
+    margin-left: -35px;
+}
+

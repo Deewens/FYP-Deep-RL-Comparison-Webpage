@@ -1,0 +1,97 @@
+/* Timeline (vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    border-radius: 5px;
+    content: '';
+    position: absolute;
+    width: 6px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline--color-primary::after {
+    background-color: var(--primary-color);
+}
+
+.timeline--color-secondary::after {
+    background-color: var(--secondary-color);
+}
+
+/* Timeline item, container around content */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* Circles on the timeline */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item--border-color-primary::after {
+    border: 4px solid var(--primary-color)
+}
+
+.timeline-item--border-color-secondary::after {
+    border: 4px solid var(--secondary-color)
+}
+
+.timeline-item--direction-left {
+    text-align: right;
+    left: 0;
+}
+
+.timeline-item--direction-right {
+    left: 50%;
+}
+
+.timeline-item--direction-right::after {
+    left: -16px;
+}
+
+.timeline-item__content {
+    padding: 6px 0;
+    position: relative;
+    color: white;
+}
+
+.timeline-item__period {
+    font-size: larger;
+}
+
+.timeline-item__period--color-primary {
+    color: var(--primary-color)
+}
+
+.timeline-item__period--color-secondary {
+    color: var(--secondary-color)
+}
+
+.timeline-item__title {
+    margin-bottom: 0;
+    font-size: medium;
+}
+
+.timeline-item__subtitle {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: small;
+    font-style: italic;
+}

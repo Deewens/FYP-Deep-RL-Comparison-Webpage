@@ -66,6 +66,10 @@
     left: -16px;
 }
 
+.timeline-item__description {
+    text-align: left;
+}
+
 .timeline-item__content {
     padding: 6px 0;
     position: relative;

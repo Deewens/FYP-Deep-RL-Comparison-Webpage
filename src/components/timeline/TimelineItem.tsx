@@ -34,7 +34,9 @@ function TimelineItem(props: Props) {
         <h3 className="timeline-item__title">{props.title}</h3>
         <h4 className="timeline-item__subtitle">{props.subtitle}</h4>
 
-        {props.children}
+        <div className="timeline-item__description">
+          {props.children}
+        </div>
       </div>
     </div>
   )

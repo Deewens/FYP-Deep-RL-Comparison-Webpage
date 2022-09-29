@@ -15,10 +15,10 @@ function Header(props: Props) {
       ${props.position === 'absolute' ? 'header--position-absolute' : ''}`
     }>
       <nav className="header__navbar">
-        <HeaderNavItem><NavLink to="/about">About</NavLink></HeaderNavItem>
+        <HeaderNavItem><NavLink to="/">About</NavLink></HeaderNavItem>
         <HeaderNavItem><NavLink to="/projects/games">Games</NavLink></HeaderNavItem>
-        <HeaderNavItem>Web</HeaderNavItem>
-        <HeaderNavItem>Softwares</HeaderNavItem>
+        <HeaderNavItem><NavLink to="/projects/web">Web</NavLink></HeaderNavItem>
+        <HeaderNavItem><NavLink to="/projects/softwares">Softwares</NavLink></HeaderNavItem>
         <HeaderNavItem>Resume</HeaderNavItem>
       </nav>
     </header>

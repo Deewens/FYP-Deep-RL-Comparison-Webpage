@@ -1,6 +1,6 @@
 import Hero from './hero/Hero'
 import LandingSection from './landing-section/LandingSection'
-import Card from '../card/Card'
+import SkillCard from '../cards/SkillCard'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import './Landing.css'
 import Timeline from '../timeline/Timeline'
@@ -15,37 +15,37 @@ function Landing() {
       <Hero />
       <LandingSection className="skill-section" color="primary" title="Main Skills">
         <div className="cards-container">
-          <Card
+          <SkillCard
             className="card"
             title="Programming"
             icon={solid('computer')}
           >
             Strong web and software development experiences with many languages and frameworks. I can develop any full
             stack application.
-          </Card>
-          <Card
+          </SkillCard>
+          <SkillCard
             className="card"
             title="Game development"
             icon={solid('gamepad')}
           >
             Good knowledge of game development using the Unity game engine and the SFML Framework.
-          </Card>
-          <Card
+          </SkillCard>
+          <SkillCard
             className="card"
             title="Curiosity"
             icon={solid('eye')}
           >
             Curious person with a strong desire to learn new things and be good at it. I like to learn new stuff and
             technologies as required by the project I am working on.
-          </Card>
-          <Card
+          </SkillCard>
+          <SkillCard
             className="card"
             title="Perseverance"
             icon={solid('person-falling')}
           >
             Strong problem-solving skills and perseverance that help me solve many problems. I am confident on what I am
             doing.
-          </Card>
+          </SkillCard>
         </div>
       </LandingSection>
       <LandingSection color="secondary" title="Education">

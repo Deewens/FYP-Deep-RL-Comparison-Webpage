@@ -9,8 +9,11 @@ import {
   RouterProvider,
   Route,
 } from 'react-router-dom'
-import Project from './components/project/Project'
+import Projects from './components/project/Projects'
 import Landing from './components/landing/Landing'
+import GameProjects from './components/project/game-projects/GameProjects'
+import WebProjects from './components/project/web-projects/WebProjects'
+import SoftwareProjects from './components/project/software-projects/SoftwareProjects'
 
 const router = createBrowserRouter([
   {
@@ -18,13 +21,21 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: 'about',
+        path: '',
         element: <Landing />,
       },
       {
         path: 'projects/games',
-        element: <Project />,
+        element: <GameProjects />,
       },
+      {
+        path: 'projects/web',
+        element: <WebProjects />,
+      },
+      {
+        path: 'projects/softwares',
+        element: <SoftwareProjects />,
+      }
     ],
   },
 ])

@@ -3,14 +3,29 @@
 }
 
 .cards-container {
-    margin: auto 280px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    --grid-layout-gap: 25px;
+    --grid-column-count: 2;
+    --grid-item--min-width: 240px;
+
+    /**
+     * Calculated values.
+     */
+    --gap-count: calc(var(--grid-column-count) - 1);
+    --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+    --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    grid-gap: var(--grid-layout-gap);
+    justify-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 .card {
-    width: 360px;
+    max-width: 360px;
     height: 250px;
 }
 

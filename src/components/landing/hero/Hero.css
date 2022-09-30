@@ -10,20 +10,25 @@
     justify-content: center;
 }
 
-.hero__photo img {
+.hero__main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    align-items: center;
+    justify-items: center;
+    color: white;
+}
+
+.hero__photo {
+    display: block;
     border-radius: 50%;
     width: 350px;
+    max-width: 100%;
     height: auto;
 }
 
-.hero__main-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-     color: white;
-}
 
 .hero__catchphrase {
+    max-width: 100%;
     width: 450px;
 }
 

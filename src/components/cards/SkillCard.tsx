@@ -1,6 +1,5 @@
 import './SkillCard.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { ReactNode } from 'react'
 

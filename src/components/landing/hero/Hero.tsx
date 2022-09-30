@@ -22,9 +22,9 @@ function Hero() {
           </div>
         </section>
 
-        <section className="hero__photo">
-          <img src={AdrienDudonPhoto} alt="Adrien Dudon outside" />
-        </section>
+
+        <img className="hero__photo" src={AdrienDudonPhoto} alt="Adrien Dudon outside" />
+
       </div>
     </div>
   )

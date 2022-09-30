@@ -57,13 +57,9 @@ function Landing() {
             subtitle="South East Technological University (formerly IT Carlow) - Carlow, Ireland"
             direction="right"
           >
-            <ul>
-              <li>2D and 3D games development with SFML and Unity</li>
-              <li>AI courses and pathfinding</li>
-              <li>Development of mobile games</li>
-              <li>Web Development</li>
-              <li>Data Structures & Algorithms</li>
-            </ul>
+            I decided to undertake this course in third year because I was really interested in specialising myself in
+            the Game Development field. This courses allowed me to discor and live in another country.
+
           </TimelineItem>
 
           <TimelineItem
@@ -73,22 +69,12 @@ function Landing() {
             subtitle="Robert Schuman University Institute of Technology - Strasbourg, France"
             direction="left"
           >
-            <p>Third Year university degree in Computer Science (Ordinary Bachelor Degree)</p>
-            <ul>
-              <li>Web and Mobile development, testing, API design and development</li>
-              <li>Writing of technical an design documents</li>
-              <li>Initiation to video game development with Unity and Unreal Engine thank to an elective course</li>
-              <li>
-                <ul>
-                  <b>Run4Exp Project</b>: running app where the player's real movements are transmitted to a virtual
-                  map.
-                  <li><b>Web App:</b> developed with ReactJS in TypeScript</li>
-                  <li><b>Mobile App:</b> React Native with TypeScript</li>
-                  <li><b>REST API:</b> Spring framework (Java EE)</li>
-                </ul>
-              </li>
-              <li><b>GPA: 14.682/20</b></li>
-            </ul>
+            <p>
+              Third Year university degree in Computer Science. I learnt how to develop full stacks web applications
+              from the ground-up. This courses was an apprenticeship courses wich allowed me to gain one year of work
+              experience at the same time.<br />
+              <b>GPA: 14.682/20</b>
+            </p>
           </TimelineItem>
 
           <TimelineItem
@@ -98,26 +84,12 @@ function Landing() {
             subtitle="Metz University Institute of Technology (University of Lorraine)"
             direction="right"
           >
-            <p>Two-year university degree in Computer Science</p>
-            <ul>
-              <li><b>IT Basics:</b> computer architecture and algorithms, procedural programming and Object Oriented
-                Programming, Systems and Networks, relational databases
-              </li>
-              <li>Full stack application development</li>
-              <li>Business management, law, economics, mathematics, project management</li>
-              <li>Three-month internship at the end of the second year</li>
-              <li>Top of the class at the end of the second year</li>
-              <li>
-                <b>Projects (see more on GitHub)</b>
-                <ul>
-                  <li><b>Company Scrapper:</b> data scrapper targeting companies employees on LinkedIn - developed with
-                    Python and Selenium
-                  </li>
-                  <li><b>RevuesOnLine:</b> software for managing a database of magasines - Java and JavaFX</li>
-                </ul>
-              </li>
-              <li><b>GPA: 13.94/20</b></li>
-            </ul>
+            <p>
+              My first two-year university degree in Computer Science.<br />
+              I learnt the basic of computer science such as: computer architecture and algorithms, procedural programming and Object Oriented
+              Programming, Systems and Networks, relational databases. I developed a lot of projects during this course.<br />
+              <b>GPA: 13.94/20 (Top of the class in fourth semester)</b>
+            </p>
           </TimelineItem>
         </Timeline>
       </LandingSection>
@@ -161,7 +133,7 @@ function Landing() {
         </Timeline>
       </LandingSection>
     </div>
-  )
+)
 }
 
 export default Landing

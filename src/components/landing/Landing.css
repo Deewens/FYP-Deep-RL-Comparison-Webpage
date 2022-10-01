@@ -2,6 +2,11 @@
     box-shadow: 0 -0.5px 50px 5px rgba(0, 0, 0, 0.5);
 }
 
+.landing-section__title {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .cards-container {
     --grid-layout-gap: 25px;
     --grid-column-count: 2;

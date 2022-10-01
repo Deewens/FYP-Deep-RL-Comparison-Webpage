@@ -6,5 +6,9 @@
     justify-content: center;
     color: white;
     font-size: larger;
-    margin: 0 50px;
+    padding: 0 50px;
+}
+
+.menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }

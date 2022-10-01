@@ -27,6 +27,32 @@ a {
     color: white;
 }
 
-a:hover {
-    color: rgba(255, 255, 255, 50%);
+.header__nav-mobile {
+    height: 55px;
+}
+
+.header__nav-mobile--background {
+    background-color: var(--primary-color);
+}
+
+.header__nav-mobile-btn {
+    color: white;
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    width: 50px;
+    cursor: pointer;
+    transition: color 0.1s ease;
+}
+
+.header__nav-mobile-btn:hover {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.header__nav-mobile-items {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
 }

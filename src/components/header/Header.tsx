@@ -2,6 +2,8 @@ import './Header.css'
 import HeaderNavItem from './HeaderNavItem'
 import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 type Props = {
   color?: 'primary' | 'transparent',
@@ -13,10 +15,19 @@ function Header(props: Props) {
   const [mobileNavbarOpen, setMobileNavbarOpen] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth < 500) {
-      setMobileNavbar(true)
+    handleResize()
+
+    function handleResize() {
+      if (window.innerWidth < 600) {
+        setMobileNavbar(true)
+      } else if (window.innerWidth > 600) {
+        setMobileNavbar(false)
+      }
     }
-  }, [window.innerWidth])
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  })
 
   return (
     <header className={
@@ -26,20 +37,31 @@ function Header(props: Props) {
     }>
       {
         mobileNavbar ?
-          <nav className="header__navbar-mobile">
-            <button onClick={() => setMobileNavbarOpen(prev => !prev)}>{mobileNavbarOpen ? 'Close' : 'Open'}</button>
-            <ul className={`header__nav-menu-mobile ${mobileNavbarOpen ? 'header__nav-menu-mobile--show' : ''}`}>
-
-            </ul>
+          <nav className={`header__nav-mobile ${mobileNavbarOpen && 'header__nav-mobile--background'}`}>
+            <button className="header__nav-mobile-btn" onClick={() => setMobileNavbarOpen(prev => !prev)}>
+              {
+                mobileNavbarOpen
+                  ? <FontAwesomeIcon size="2x" icon={solid('xmark')} />
+                  : <FontAwesomeIcon size="2x" icon={solid('bars')} />
+              }
+            </button>
+            {mobileNavbarOpen &&
+                <ul
+                    className={`header__nav-mobile-items`}>
+                    <li><NavLink to="/"><HeaderNavItem>About</HeaderNavItem></NavLink></li>
+                    <li><NavLink to="/projects/games"><HeaderNavItem>Games</HeaderNavItem></NavLink></li>
+                    <li><NavLink to="/projects/web"><HeaderNavItem>Web</HeaderNavItem></NavLink></li>
+                    <li><NavLink to="/projects/softwares"><HeaderNavItem>Softwares</HeaderNavItem></NavLink></li>
+                    <li><NavLink to="/"><HeaderNavItem>Resume</HeaderNavItem></NavLink></li>
+                </ul>}
           </nav> :
           <nav className="header__navbar">
-            <HeaderNavItem><NavLink to="/">About</NavLink></HeaderNavItem>
-            <HeaderNavItem><NavLink to="/projects/games">Games</NavLink></HeaderNavItem>
-            <HeaderNavItem><NavLink to="/projects/web">Web</NavLink></HeaderNavItem>
-            <HeaderNavItem><NavLink to="/projects/softwares">Softwares</NavLink></HeaderNavItem>
-            <HeaderNavItem>Resume</HeaderNavItem>
+            <NavLink to="/"><HeaderNavItem>About</HeaderNavItem></NavLink>
+            <NavLink to="/projects/games"><HeaderNavItem>Games</HeaderNavItem></NavLink>
+            <NavLink to="/projects/web"><HeaderNavItem>Web</HeaderNavItem></NavLink>
+            <NavLink to="/projects/softwares"><HeaderNavItem>Softwares</HeaderNavItem></NavLink>
+            <NavLink to="/"><HeaderNavItem>Resume</HeaderNavItem></NavLink>
           </nav>
-
       }
 
 

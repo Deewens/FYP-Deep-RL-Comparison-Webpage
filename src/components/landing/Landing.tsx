@@ -13,7 +13,8 @@ function Landing() {
     <div>
       <Header color="transparent" position="absolute" />
       <Hero />
-      <LandingSection className="skill-section" color="primary" title="Main Skills">
+      <LandingSection className="skill-section" color="primary">
+        <h2 className="landing-section__title">Main Skills</h2>
         <div className="cards-container">
           <SkillCard
             className="card"
@@ -48,7 +49,9 @@ function Landing() {
           </SkillCard>
         </div>
       </LandingSection>
-      <LandingSection color="secondary" title="Education">
+      <LandingSection color="secondary">
+        <h2 className="landing-section__title">Education</h2>
+
         <Timeline>
           <TimelineItem
             className="timeline-item"
@@ -86,14 +89,16 @@ function Landing() {
           >
             <p>
               My first two-year university degree in Computer Science.<br />
-              I learnt the basic of computer science such as: computer architecture and algorithms, procedural programming and Object Oriented
+              I learnt the basic of computer science such as: computer architecture and algorithms, procedural
+              programming and Object Oriented
               Programming, Systems and Networks, relational databases. I developed a lot of projects during this course.<br />
               <b>GPA: 13.94/20 (Top of the class in fourth semester)</b>
             </p>
           </TimelineItem>
         </Timeline>
       </LandingSection>
-      <LandingSection title="Work Experience" color="primary">
+      <LandingSection color="primary">
+        <h2 className="landing-section__title">Work Experience</h2>
         <Timeline color="secondary">
           <TimelineItem
             color="secondary"
@@ -133,7 +138,7 @@ function Landing() {
         </Timeline>
       </LandingSection>
     </div>
-)
+  )
 }
 
 export default Landing

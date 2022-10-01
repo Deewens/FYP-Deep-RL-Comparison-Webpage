@@ -1,12 +1,7 @@
 import './Projects.css'
 import Header from '../header/Header'
-import React, { useEffect } from 'react'
+import React from 'react'
 import Clouds from '../../assets/img/clouds.svg'
-import SkillCard from '../cards/SkillCard'
-import ProjectCard from '../cards/ProjectCard'
-import Cyberpunk2077Draw from '../../assets/img/projects-games-header.jpg'
-import { useNavigate } from 'react-router-dom'
-import games from '../../database/games.json'
 
 type Props = {
   title: string
@@ -16,19 +11,24 @@ type Props = {
 
 function Projects(props: Props) {
   return (
-    <div>
+    <div className="projects">
       <Header />
-      <section className="project-header" style={{backgroundImage: `url("${props.headerImg}")`}}>
+      <section
+        className="projects-header"
+        style={{
+          background: `radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%), url("${props.headerImg}") bottom/cover`,
+        }}>
         <div>{props.title}</div>
+        <img className="projects-header-clouds" src={Clouds} alt="Clouds" />
       </section>
-      <div className="project-header-clouds">
-        <img src={Clouds} alt="Clouds" />
-      </div>
 
-      <p>Click on a card to see more information on one of my project</p>
 
-      <section className="project-list">
-        {props.children}
+      <section className="projects-content">
+        <p style={{color: 'white', textAlign: 'center', fontSize: 'larger'}}>Click on a card to see more information on one of my project</p>
+
+        <div className="projects-list">
+          {props.children}
+        </div>
       </section>
     </div>
   )

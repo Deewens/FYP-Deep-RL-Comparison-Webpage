@@ -13,9 +13,11 @@
 .hero__main-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    row-gap: 1rem;
     align-items: center;
     justify-items: center;
     color: white;
+    padding: 1rem;
 }
 
 .hero__photo {

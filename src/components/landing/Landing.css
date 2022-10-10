@@ -13,7 +13,7 @@
     --grid-item--min-width: 240px;
 
     /**
-     * Calculated values.
+     * Calculated values
      */
     --gap-count: calc(var(--grid-column-count) - 1);
     --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));

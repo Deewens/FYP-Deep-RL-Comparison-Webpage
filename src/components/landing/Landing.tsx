@@ -7,6 +7,7 @@ import Timeline from '../timeline/Timeline'
 import TimelineItem from '../timeline/TimelineItem'
 import Header from '../header/Header'
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Landing() {
   return (
@@ -51,9 +52,10 @@ function Landing() {
       </LandingSection>
       <LandingSection color="secondary">
         <h2 className="landing-section__title">Education</h2>
-        <Timeline>
-          <p className="color__white">You can have more details and information by looking directly at my <strong>Resume</strong>.</p>
+        <p className="landing-section__description">Check my <NavLink to="/resume"><strong>Resume</strong></NavLink> for
+          more details on my education.</p>
 
+        <Timeline>
           <TimelineItem
             className="timeline-item"
             period="2021 - Present"
@@ -104,6 +106,8 @@ function Landing() {
       </LandingSection>
       <LandingSection color="primary">
         <h2 className="landing-section__title">Work Experience</h2>
+        <p className="landing-section__description">Check my <NavLink to="/resume"><strong>Resume</strong></NavLink> for
+          more details on my Work Experience.</p>
         <Timeline color="secondary">
           <TimelineItem
             color="secondary"

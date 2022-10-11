@@ -11,6 +11,7 @@ import {
 import Landing from './components/landing/Landing'
 import GameProjects from './components/project/game-projects/GameProjects'
 import AppsProjects from './components/project/apps-projects/AppsProjects'
+import Resume from './components/resume/Resume'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: 'projects/apps',
         element: <AppsProjects />,
+      },
+      {
+        path: 'resume',
+        element: <Resume />,
       },
     ],
   },

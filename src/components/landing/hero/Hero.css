@@ -55,3 +55,11 @@
     gap: 30px;
     color: #047585;
 }
+
+.hero__socials--link {
+    color: inherit;
+}
+
+.hero__socials--link:hover {
+    color: white;
+}

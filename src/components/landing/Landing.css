@@ -7,6 +7,16 @@
     margin: 0 auto;
 }
 
+.landing-section__description {
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.landing-section__description a {
+    text-decoration: underline;
+}
+
 .cards-container {
     --grid-layout-gap: 25px;
     --grid-column-count: 2;

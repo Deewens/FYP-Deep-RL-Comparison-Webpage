@@ -51,14 +51,14 @@ function Header(props: Props) {
                     <li><NavLink to="/"><HeaderNavItem>About</HeaderNavItem></NavLink></li>
                     <li><NavLink to="/projects/games"><HeaderNavItem>Games</HeaderNavItem></NavLink></li>
                     <li><NavLink to="/projects/apps"><HeaderNavItem>Applications</HeaderNavItem></NavLink></li>
-                    <li><NavLink to="/"><HeaderNavItem>Resume</HeaderNavItem></NavLink></li>
+                    <li><NavLink to="/resume"><HeaderNavItem>Resume</HeaderNavItem></NavLink></li>
                 </ul>}
           </nav> :
           <nav className="header__navbar">
             <NavLink to="/"><HeaderNavItem>About</HeaderNavItem></NavLink>
             <NavLink to="/projects/games"><HeaderNavItem>Games</HeaderNavItem></NavLink>
             <NavLink to="/projects/apps"><HeaderNavItem>Applications</HeaderNavItem></NavLink>
-            <NavLink to="/"><HeaderNavItem>Resume</HeaderNavItem></NavLink>
+            <NavLink to="/resume"><HeaderNavItem>Resume</HeaderNavItem></NavLink>
           </nav>
       }
 

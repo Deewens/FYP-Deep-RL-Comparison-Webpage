@@ -21,8 +21,8 @@ function Landing() {
             title="Programming"
             icon={solid('computer')}
           >
-            Strong web and software development experiences with many languages and frameworks. I can develop any full
-            stack application.
+            Strong web and software development experience with many languages and frameworks. I can develop any
+            full-stack application.
           </SkillCard>
           <SkillCard
             className="card"
@@ -36,7 +36,7 @@ function Landing() {
             title="Curiosity"
             icon={solid('eye')}
           >
-            Curious person with a strong desire to learn new things and be good at it. I like to learn new stuff and
+            A curious person with a strong desire to learn new things and be good at them. I like to learn new stuff and
             technologies as required by the project I am working on.
           </SkillCard>
           <SkillCard
@@ -44,15 +44,16 @@ function Landing() {
             title="Perseverance"
             icon={solid('person-falling')}
           >
-            Strong problem-solving skills and perseverance that help me solve many problems. I am confident on what I am
+            Strong problem-solving skills and perseverance help me solve many problems. I am confident in what I am
             doing.
           </SkillCard>
         </div>
       </LandingSection>
       <LandingSection color="secondary">
         <h2 className="landing-section__title">Education</h2>
-
         <Timeline>
+          <p className="color__white">You can have more details and information by looking directly at my <strong>Resume</strong>.</p>
+
           <TimelineItem
             className="timeline-item"
             period="2021 - Present"
@@ -60,9 +61,12 @@ function Landing() {
             subtitle="South East Technological University (formerly IT Carlow) - Carlow, Ireland"
             direction="right"
           >
-            I decided to undertake this course in third year because I was really interested in specialising myself in
-            the Game Development field. This courses allowed me to discor and live in another country.
-
+            <p>
+              I joined this course in my third year, after three years of general computer science studies in France.
+              I decided to undertake this course because I am really interested in specialising in
+              the Game Development field. Furthermore, this allows me to discover and live in another country.<br />
+              <strong>Third Year GPA: 73.6%</strong>
+            </p>
           </TimelineItem>
 
           <TimelineItem
@@ -73,10 +77,11 @@ function Landing() {
             direction="left"
           >
             <p>
-              Third Year university degree in Computer Science. I learnt how to develop full stacks web applications
-              from the ground-up. This courses was an apprenticeship courses wich allowed me to gain one year of work
+              Third Year university degree in Computer Science. I learnt how to develop full-stack web applications
+              from the ground up. This course was an apprenticeship undergraduate Bachelor which allowed me to gain one
+              year of work
               experience at the same time.<br />
-              <b>GPA: 14.682/20</b>
+              <strong>GPA: 14.682/20</strong>
             </p>
           </TimelineItem>
 
@@ -88,11 +93,11 @@ function Landing() {
             direction="right"
           >
             <p>
-              My first two-year university degree in Computer Science.<br />
-              I learnt the basic of computer science such as: computer architecture and algorithms, procedural
-              programming and Object Oriented
-              Programming, Systems and Networks, relational databases. I developed a lot of projects during this course.<br />
-              <b>GPA: 13.94/20 (Top of the class in fourth semester)</b>
+              Two-year university degree in Computer Science.<br />
+              I learnt the basics of computer science such as <strong>computer architecture and algorithms, procedural
+              programming, Object Oriented Programming, Systems and Networks, relational databases...</strong> I also
+              developed a lot of projects during this course.<br />
+              <b>GPA: 13.94/20 (Top of the class in the fourth semester)</b>
             </p>
           </TimelineItem>
         </Timeline>
@@ -105,7 +110,9 @@ function Landing() {
             period="March 2022 - August 2022"
             title="Expleo"
             subtitle="Intern Full Stack Engineer">
-            Developed an application for Renault Quality Department
+            <p>I developed a full-stack web application for an Expleo Team working in the Renault Quality Department at
+              the Renault Technocentre localised in Guyancourt in France. This application allows the team to better
+              manage the return of defective car parts under the Renault Warranty.</p>
           </TimelineItem>
 
           <TimelineItem
@@ -130,9 +137,8 @@ function Landing() {
             title="Versailles Saint-Quentin-en-Yvelines University - Remote"
             subtitle="Apprentice Web Developer">
             <p>
-              I created few programs using the Talend software and worked on the University's relational databases by
-              making data correction. <br />
-              I also developed Java Script for Talend
+              I created a few programs using the Talend software and worked on the University's relational databases by
+              making data corrections.
             </p>
           </TimelineItem>
         </Timeline>

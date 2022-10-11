@@ -1,20 +1,20 @@
 [
   {
     "title": "SHHHHHH...!",
-    "imagePath": "/img/projects/SHHHHHH....jpg",
-    "shortDescription": "SHHHHHH...! is a two-dimensional top-down view game where the player needs to escape from an island while avoiding zombies! This game was developed with SFML and C++ and feature a complete game loop as well as a level editor.",
-    "seeMoreURL": ""
-  },
-  {
-    "title": "TicTacToe Online and Nim Games",
-    "imagePath": "/img/projects/nim-game.png",
-    "shortDescription": "This client/server Java application features two mini-games: an Online Tic-tac-toe and the Nim's Game. Tic-tac-toe game can be played with another real player, whereas you can play against a bot in Nim. The UI is made with JavaFX and the client/server communication with RMI interfaces.",
-    "seeMoreURL": "https://github.com/Deewens/Java-minigames"
+    "imagePath": "/img/projects/games/SHHHHHH....png",
+    "shortDescription": "SHHHHHH...! is a two-dimensional top-down view game where the player needs to escape from an island while avoiding zombies! This game was developed with SFML and C++ and features a complete game loop as well as a level editor.",
+    "seeMoreURL": "https://github.com/Deewens/SHHHHHH"
   },
   {
     "title": "Cops and Robbers",
-    "imagePath": "/img/projects/",
-    "shortDescription": "Cops and Robbers is a 2D Platformer mobile game developed with Unity! The game feature a character that needs to escapes the police.",
+    "imagePath": "/img/projects/games/cops_and_robbers.jpg",
+    "shortDescription": "Cops and Robbers is a 2D Platformer mobile game developed with Unity! The game feature a character that needs to escape the police.",
     "seeMoreURL": "https://github.com/ITC-Gameplay-Programming/Cops-and-Robbers"
+  },
+  {
+    "title": "TicTacToe Online and Nim Games",
+    "imagePath": "/img/projects/games/nim-game.png",
+    "shortDescription": "This client/server Java application features two mini-games: an Online Tic-tac-toe and the Nim's Game. Tic-tac-toe game can be played with another real player, whereas you can play against a bot in Nim. The UI is made with JavaFX and the client/server communication with RMI interfaces.",
+    "seeMoreURL": "https://github.com/Deewens/Java-minigames"
   }
 ]

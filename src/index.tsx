@@ -7,13 +7,10 @@ import './variables.css'
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
 } from 'react-router-dom'
-import Projects from './components/project/Projects'
 import Landing from './components/landing/Landing'
 import GameProjects from './components/project/game-projects/GameProjects'
-import WebProjects from './components/project/web-projects/WebProjects'
-import SoftwareProjects from './components/project/software-projects/SoftwareProjects'
+import AppsProjects from './components/project/apps-projects/AppsProjects'
 
 const router = createBrowserRouter([
   {
@@ -29,13 +26,9 @@ const router = createBrowserRouter([
         element: <GameProjects />,
       },
       {
-        path: 'projects/web',
-        element: <WebProjects />,
+        path: 'projects/apps',
+        element: <AppsProjects />,
       },
-      {
-        path: 'projects/softwares',
-        element: <SoftwareProjects />,
-      }
     ],
   },
 ])

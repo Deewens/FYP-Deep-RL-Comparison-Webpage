@@ -1,17 +1,16 @@
 import './ProjectCard.css'
-import React, { MouseEventHandler, ReactNode } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { CSSProperties, ReactNode } from 'react'
 
 type Props = {
   title: string
   image: string
+  style?: CSSProperties
   seeMoreURL: string
   children: ReactNode
 }
 
 function ProjectCard(props: Props) {
   const goToURL = () => {
-    //navigate('/')
     window.open(
       props.seeMoreURL,
       '_blank',
@@ -24,6 +23,7 @@ function ProjectCard(props: Props) {
         className="project-card__image"
         style={{
           backgroundImage: `url(${props.image})`,
+          ...props.style
         }}
       >
         <h4 className="project-card__image-title">See more</h4>

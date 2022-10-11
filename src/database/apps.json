@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Run4Exp",
+    "imagePath": "/img/projects/apps/Run4Exp.jpg",
+    "shortDescription": "Run4Exp is a sports app where the player's real movements (made by walking, running or biking) are transmitted to a virtual map. The app feature a web application and a mobile made both using React. The backend has been written with the Spring Boot framework",
+    "seeMoreURL": "https://github.com/Deewens/Run4Exp"
+  },
+  {
+    "title": "Company Scrapper",
+    "imagePath": "/img/projects/apps/company-scrapper-poster.jpg",
+    "style": {
+      "backgroundPosition": "top"
+    },
+    "shortDescription": "This software is a data scraping tool that can extract company employees' data from LinkedIn and the Crunchbase API, and then store those in a MySQL Database.",
+    "seeMoreURL": "https://github.com/Deewens/Company-Scraper"
+  },
+  {
+    "title": "Little Blog",
+    "imagePath": "/img/projects/apps/little-blog.png",
+    "shortDescription": "Little Blog is a blog site that allows logged-in users to create blog posts. Developed using PHP and MySQL for the backend, and HTML/CSS and JS for the layout and using Bootstrap 4 as CSS framework.",
+    "seeMoreURL": "https://github.com/Deewens/Little-blog"
+  },
+  {
+    "title": "Java Paint",
+    "imagePath": "/img/projects/apps/java-paint.gif",
+    "shortDescription": "Java Computer-Aided Design (CAD) application for drawing simple and complex geometrical shapes. It was my first real program with a graphical interface in Java. I learned important Object-Oriented Programming concepts and the practical application of geometrical and mathematical concepts.",
+    "seeMoreURL": "https://github.com/Deewens/Paint"
+  },
+  {
+    "title": "RevuesOnLine",
+    "imagePath": "/img/projects/apps/RevuesOnLine.png",
+    "shortDescription": "Software for managing a database of magazines. This software has been created in Java and JavaFX for the UI. It can store its data in any database, thanks to the DAO pattern.",
+    "seeMoreURL": "https://github.com/Deewens/RevuesOnLine"
+  },
+  {
+    "title": "Sudoku Solver",
+    "imagePath": "/img/projects/apps/sudoku_solver.png",
+    "shortDescription": "A simple sudoku solver in command line written in C. It can read a sudoku grid from a txt file and resolve it automatically, showing the steps of resolution in the terminal.",
+    "seeMoreURL": "https://github.com/Deewens/Sudoku-Solver"
+  },
+  {
+    "title": "Portfolio of college projects",
+    "imagePath": "/img/projects/apps/metz-uit-portfolio.jpg",
+    "shortDescription": "Portfolio website for posting projects made in the Computing Department of the Metz University Institute of Technology. Created without any framework with HTML5, CSS3, PHP, MySQL and JavaScript.",
+    "seeMoreURL": "https://github.com/Deewens/Department-of-Computing---Portfolio"
+  },
+  {
+    "title": "le-chocolat.fr",
+    "imagePath": "/img/projects/apps/le-chocolat.fr.png",
+    "shortDescription": "First real website project that I did for my first year of computer science studies. I learnt the basic web languages (HTML, CSS) and I had to create a website (without JavaScript) on a specific theme (chocolate).",
+    "seeMoreURL": "https://github.com/Deewens/le-chocolat.fr"
+  }
+]

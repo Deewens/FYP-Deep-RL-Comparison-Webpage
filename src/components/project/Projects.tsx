@@ -6,6 +6,7 @@ import Clouds from '../../assets/img/clouds.svg'
 type Props = {
   title: string
   headerImg: string
+  headerImgPosition?: 'bottom' | 'center'
   children?: React.ReactNode
 }
 
@@ -16,7 +17,9 @@ function Projects(props: Props) {
       <section
         className="projects-header"
         style={{
-          background: `radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%), url("${props.headerImg}") bottom/cover`,
+          background:
+            `radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%), 
+            url("${props.headerImg}") ${props.headerImgPosition ? props.headerImgPosition : 'bottom'}/cover`,
         }}>
         <div>{props.title}</div>
         <img className="projects-header-clouds" src={Clouds} alt="Clouds" />

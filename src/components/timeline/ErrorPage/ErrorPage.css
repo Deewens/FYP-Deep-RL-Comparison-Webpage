@@ -1,0 +1,15 @@
+.error-page {
+    text-align: center;
+    color: white;
+    font-size: 3ex;
+}
+
+.error-page__go-home a {
+    text-decoration: underline;
+    color: var(--secondary-color);
+
+}
+
+.error-page__go-home a:hover {
+    color: white;
+}

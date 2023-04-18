@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/FYP-Deep-RL-Comparison-Webpage/static/css/main.e53dc300.css",
+    "main.js": "/FYP-Deep-RL-Comparison-Webpage/static/js/main.ce1c5c4a.js",
+    "static/js/787.1ed0c42c.chunk.js": "/FYP-Deep-RL-Comparison-Webpage/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Positive System.otf": "/FYP-Deep-RL-Comparison-Webpage/static/media/Positive System.2c396fe857f7c3c1a04e.otf",
+    "static/media/hero-background-nn.jpg": "/FYP-Deep-RL-Comparison-Webpage/static/media/hero-background-nn.a63c1eedaa30ef99dfc8.jpg",
+    "static/media/RL_loop.png": "/FYP-Deep-RL-Comparison-Webpage/static/media/RL_loop.b48cfc57a698e5fe00eb.png",
+    "index.html": "/FYP-Deep-RL-Comparison-Webpage/index.html",
+    "main.e53dc300.css.map": "/FYP-Deep-RL-Comparison-Webpage/static/css/main.e53dc300.css.map",
+    "main.ce1c5c4a.js.map": "/FYP-Deep-RL-Comparison-Webpage/static/js/main.ce1c5c4a.js.map",
+    "787.1ed0c42c.chunk.js.map": "/FYP-Deep-RL-Comparison-Webpage/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e53dc300.css",
+    "static/js/main.ce1c5c4a.js"
+  ]
+}

@@ -1,18 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.023d60a4.css",
-    "main.js": "/static/js/main.987cefc7.js",
+    "main.css": "/static/css/main.a4c00bc0.css",
+    "main.js": "/static/js/main.13fa4941.js",
     "static/js/787.5506f7c2.chunk.js": "/static/js/787.5506f7c2.chunk.js",
     "static/media/Positive System.otf": "/static/media/Positive System.2c396fe857f7c3c1a04e.otf",
     "static/media/hero-background-nn.jpg": "/static/media/hero-background-nn.a63c1eedaa30ef99dfc8.jpg",
     "static/media/RL_loop.png": "/static/media/RL_loop.b48cfc57a698e5fe00eb.png",
+    "static/media/deep_q-learning-algorithm.png": "/static/media/deep_q-learning-algorithm.b2adae3d15efc9214d76.png",
+    "static/media/train_loss.svg": "/static/media/train_loss.299725823e2f2e0c37ff69360731f04e.svg",
+    "static/media/rollout_ep_rew_mean.svg": "/static/media/rollout_ep_rew_mean.1c6ec2e26adf2022f0828867c132176b.svg",
+    "static/media/cnn_schematic_illustration.png": "/static/media/cnn_schematic_illustration.a7774589b730c2520613.png",
+    "static/media/swin_transformer_schematic.webp": "/static/media/swin_transformer_schematic.875af38d97e50d0af3d9.webp",
     "index.html": "/index.html",
-    "main.023d60a4.css.map": "/static/css/main.023d60a4.css.map",
-    "main.987cefc7.js.map": "/static/js/main.987cefc7.js.map",
+    "main.a4c00bc0.css.map": "/static/css/main.a4c00bc0.css.map",
+    "main.13fa4941.js.map": "/static/js/main.13fa4941.js.map",
     "787.5506f7c2.chunk.js.map": "/static/js/787.5506f7c2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.023d60a4.css",
-    "static/js/main.987cefc7.js"
+    "static/css/main.a4c00bc0.css",
+    "static/js/main.13fa4941.js"
   ]
 }

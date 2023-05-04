@@ -4,26 +4,6 @@
     padding: 50px 300px;
 }
 
-.landing-section p {
-    font-size: large;
-}
-
-.landing-section__h2 {
-    margin-top: 0;
-    font-size: 4ex;
-    font-weight: normal;
-}
-
-.landing-section__h3 {
-    font-size: 3ex;
-    font-weight: normal;
-}
-
-.landing-section__h4 {
-    font-size: 2ex;
-    font-weight: bold;
-}
-
 .landing-section--color-primary {
     background-color: var(--primary-color);
 }

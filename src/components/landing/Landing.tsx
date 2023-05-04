@@ -1,385 +1,517 @@
 import Hero from './hero/Hero'
 import LandingSection from './landing-section/LandingSection'
-import SkillCard from '../cards/SkillCard'
 import './Landing.css'
-import Timeline from '../timeline/Timeline'
-import TimelineItem from '../timeline/TimelineItem'
 import Header from '../header/Header'
-import React, {createRef, MutableRefObject, useEffect, useRef, useState} from 'react'
-import {NavLink} from 'react-router-dom'
+import React, {createRef} from 'react'
 import useOnScreen from '../../hooks/useOnScreen'
 
 import AdrienDudonPhoto from '../../assets/img/me.jpg'
 import RLLoopImage from '../../assets/img/RL_loop.png'
-import SwinTransformerIllustration from '../../assets/img/swin_transformer_schematic.webp'
-import CnnIllustration from '../../assets/img/cnn_schematic_illustration.png'
-import DeepQLearningAlgorithmImage from '../../assets/img/deep_q-learning-algorithm.png'
+import SwinTransformerArchitectureImg from '../../assets/img/swin_architecture.jpg'
+import CnnArchitectureImg from '../../assets/img/cnn_architecture.jpg'
 
-import CnnDDQNMeanRewardChartImg from '../../assets/img/results/cnn/rollout_ep_rew_mean.svg'
-import CnnDDQNTrainLossChartImg from '../../assets/img/results/cnn/train_loss.svg'
+import PongEpisodeMeanRewardImg from '../../assets/img/pong_episode_reward_mean.png'
+import PongEpisodicReturnImg from '../../assets/img/pong_episodic_return.png'
 
-import SwinDDQNMeanRewardChartImg from '../../assets/img/results/swin/rollout_ep_rew_mean.svg'
-import SwinDDQNTrainLossChartImg from '../../assets/img/results/swin/train_loss.svg'
+import BreakoutEpisodeMeanRewardImg from '../../assets/img/breakout_episode_reward_mean.png'
+import BreakoutEpisodicReturnImg from '../../assets/img/breakout_episodic_return.png'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {icon, solid, brands} from '@fortawesome/fontawesome-svg-core/import.macro'
+import {icon} from '@fortawesome/fontawesome-svg-core/import.macro'
+import Latex from "react-latex-next";
+import ReactMarkdown from "react-markdown";
 
 function Landing() {
     const heroRef = createRef<HTMLDivElement>()
-    const isHeroOnScreen = useOnScreen(heroRef)
+    /*const isHeroOnScreen = useOnScreen(heroRef)
 
     const [headerColour, setHeaderColour] = useState<'primary' | 'transparent'>("transparent")
 
     useEffect(() => {
-      if (isHeroOnScreen)
-        setHeaderColour("transparent")
-      else
-        setHeaderColour("primary")
-    }, [isHeroOnScreen])
+        if (isHeroOnScreen)
+            setHeaderColour("transparent")
+        else
+            setHeaderColour("primary")
+    }, [isHeroOnScreen])*/
 
     return (
         <div>
-            <Header color={headerColour} position="fixed"/>
+            <Header /*color={headerColour}*/ position="fixed"/>
             <Hero ref={heroRef}/>
             <div className="landing-content">
                 <LandingSection id="aboutSection" className="landing-section--first-section text-section"
                                 color="primary">
                     <div className="landing-section__content">
-                        <h2>About my project</h2>
-                        <p style={{fontSize: "larger"}}>
+                        <h2 className="landing-section__h2">About my project</h2>
+                        <h3 className="landing-section__h3">Abstract</h3>
+                        <p className="landing-section__paragraph">
+                            Recent studies have suggested that the Vision Transformer (ViT) architecture could
+                            potentially outperform Convolutional Neural Network (CNN) in solving complex game
+                            environments. However, the full potential of ViT in replacing CNN has yet to be realized.
+                            This research project aims to explore the efficacy of the Swin Transformer, a recently
+                            introduced ViT model, as the primary network backbone in the Double Deep Q Network (Double
+                            DQN) algorithm. The objective is to determine if ViT can achieve results that are as good as
+                            or better than those achieved by CNN.
+                        </p>
+                        <p className="landing-section__paragraph">
+                            During the course of my research, I came across a paper titled "Deep Reinforcement Learning
+                            with Swin Transformer" by Meng et al. (2022), which had already implemented Swin Transformer
+                            and conducted a comparison with CNN. I attempted to replicate their experimentation to
+                            determine if I could achieve similar results. However, my findings were different from
+                            theirs.
+                        </p>
+                        <p className="landing-section__paragraph">
+                            My results indicate that CNN outperforms Swin Transformer, especially with a smaller number
+                            of training steps. CNN also requires less computing power and memory compared to Swin
+                            Transformer, which necessitates more data and a recent GPU with sufficient VRAM. To achieve
+                            better results than CNN, Swin Transformer may require a higher number of training steps, as
+                            demonstrated by Meng et al. (2022).
+                        </p>
+                        <h3 className="landing-section__h3">Introduction</h3>
+                        <p className="landing-section__paragraph">
                             Deep Reinforcement Learning is a subfield of machine learning that combines the principles
-                            of
-                            reinforcement learning and deep learning. When applied to video games, Deep RL represents a
-                            promising alternative to traditional AI algorithms because it enables the agent to learn and
-                            act
-                            in
-                            its environment without any prior knowledge or interference from a human player.
+                            of reinforcement learning and deep learning. When applied to video games, Deep RL represents
+                            a promising alternative to traditional AI algorithms because it enables the agent to learn
+                            and act in its environment without any prior knowledge or interference from a human player.
                         </p>
-                        <p style={{fontSize: "larger"}}>
+                        <p className="landing-section__paragraph">
                             An agent can use various algorithms, supported by a neural network, to learn. This neural
-                            network
-                            processes the input the agent "sees", passing through hidden layers before reaching the
-                            output
-                            layers. The best action is selected from the output layer, and the agent continues to
-                            progress
-                            through the environment.
+                            network processes the input the agent "sees", passing through hidden layers before reaching
+                            the output layers. The best action is selected from the output layer, and the agent
+                            continues to progress through the environment.
                         </p>
-                        <p className="landing-section--center"><img src={RLLoopImage} className="landing-section__image"
-                                                                    alt="RL Illustration"/></p>
-                        <p style={{fontSize: "larger"}}>
-                            In this context, my project aims to compare two types of neural networks: Convolutional
-                            Neural
-                            Networks and Vision Transformers. These networks use images as input, allowing them to
-                            generalize to
-                            various visual environments.
+                        <p className="landing-section--center">
+                            <img src={RLLoopImage} className="landing-section__image" alt="RL Illustration"/>
                         </p>
-                        <p style={{fontSize: "larger"}}>
+                        <p className="landing-section__paragraph">
                             Convolutional Neural Networks are still the go-to neural networks used in a variety of
                             image-recognition tasks. The goal of this project is to see if Vision Transformer, which is
                             a recent architecture can perform better in the same kind of tasks, and in this case, in the
                             field of Deep Reinforcement Learning.
                         </p>
-
-                        <h3 className="landing-section__h3">Technologies</h3>
-                        <p style={{fontSize: "larger"}}>
-                            To effectively carry out my project within a reasonable timeframe, I needed to use a
-                            language
-                            with a
-                            robust ecosystem to avoid reinventing the wheel. Python emerged as the ideal choice, as it
-                            is
-                            the
-                            primary language used for developing neural networks, thanks to two of its most prominent
-                            frameworks: TensorFlow and PyTorch.
-                            <br/>
-                            Below is a list of the main technologies I used for this project:
+                        <p className="landing-section__paragraph">
+                            The present research aims to provide a fresh perspective on the usage of Convolutional
+                            Neural Networks and its modern alternative, Vision Transformers, in video game environments.
+                            The central research question that guides this investigation is: <strong>“What advantages
+                            does using
+                            a Vision Transformer model offer over CNN in playing video games?”</strong> To delve deeper
+                            into this
+                            research question, three sub-questions have been formulated, namely:
                             <ul>
-                                <li><b>Python</b>: One of the best languages to use for this type of project due to the
-                                    extensive Python ecosystem.
+                                <li>
+                                    How effective are CNNs in addressing computer vision challenges in video games?
                                 </li>
-                                <li><b>TensorFlow and PyTorch</b>: Two machine learning frameworks that offer a vast
-                                    ecosystem
-                                    and utilities for deep learning purposes.
+                                <li>
+                                    Which Vision Transformer architecture would be most effective in addressing computer
+                                    vision problems in video games?
                                 </li>
-                                <li><b>Stable-Baselines3</b>: A set of reliable implementations of reinforcement
-                                    learning
-                                    algorithms.
-                                </li>
-                                <li><b>Gymnasium</b>: Gymnasium is a standard API for reinforcement learning, featuring
-                                    a
-                                    diverse collection of reference environments.
+                                <li>
+                                    What challenges are associated with training a neural network agent using Vision
+                                    Transformers compared to CNNs?
                                 </li>
                             </ul>
+
+                            To ensure a fair comparison of the neural networks, precise criteria must be used
+                            consistently throughout the experiments. This research also include tables and graphics
+                            displaying the data collected through the research.
+                        </p>
+
+                        <p className="landing-section__paragraph">
+                            CNN and ViT are tested and compared on the Atari games Pong and Breakout.
+                            The conclusions drawn from this research provide information on each neural network and
+                            their suitability for different video game contexts. This will help video game developers
+                            choose the most appropriate neural network model for their needs.
                         </p>
                     </div>
                 </LandingSection>
 
-                <LandingSection id="researchQuestionSection" className="text-section" color="secondary">
-                    <h2 className="landing-section__h2">Research Question</h2>
-                    <p style={{fontSize: "larger"}}>
-                        <i>What benefits can be gained from using Vision Transformers instead of Convolutional Neural
-                            Networks for modern computer games?</i>
+                <LandingSection id="technologiesSection" className="text-section" color="secondary">
+                    <h2 className="landing-section__h2">Technologies</h2>
+                    <p className="landing-section__paragraph">
+                        In order to ensure a fair and unbiased comparison, state-of-the-art software libraries and
+                        frameworks were used for this project. All tools utilized were open source and widely recognized
+                        in the research community.
                     </p>
-                    <p style={{fontSize: "larger"}}>
-                        To explore the research question, I have formulated three smaller questions that will be
-                        addressed:
+                    <h3 className="landing-section__h3">Frameworks and Libraries</h3>
+                    <p className="landing-section__paragraph">
+                        Python was chosen as the primary programming language for this project due to its widespread use
+                        in the machine learning community and the wealth of technical resources available in Python.
+                    </p>
+                    <p className="landing-section__paragraph">
+                        I exclusively utilize open-source libraries and frameworks. Although not exhaustive, the
+                        following list comprises the principal and most critical libraries used in my work.
+                    </p>
+                    <table className="table-technology">
+                        <thead>
+                        <tr>
+                            <th>Technology</th>
+                            <th>Version</th>
+                            <th>Description</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><a href="https://pytorch.org/">PyTorch</a></td>
+                            <td>2.0</td>
+                            <td>
+                                Machine Learning framework for deep neural networks developed by the Linux Foundation
+                                umbrella.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://gymnasium.farama.org/">Gymnasium</a></td>
+                            <td>0.28.1</td>
+                            <td>
+                                Standard API for reinforcement learning, and a diverse collection of reference
+                                environments.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://stable-baselines3.readthedocs.io/en/master/">Stable Baselines3</a></td>
+                            <td>1.8.0</td>
+                            <td>Set of reliable implementations of reinforcement learning algorithms in PyTorch.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://jupyter.org/">Jupyter Notebook</a></td>
+                            <td>6.5.4</td>
+                            <td>Interactive web-based Python code interface.</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://huggingface.co/docs/transformers/index">Transformers</a></td>
+                            <td>4.28.1</td>
+                            <td>
+                                State-of-the-art collection of Transformers neural network architectures developed by
+                                Hugging Face.
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h3 className="landing-section__h3">Development Tools</h3>
+                    <p className="landing-section__paragraph">
                         <ul>
-                            <li>How effective are Convolutional Neural Networks (CNN) in solving computer vision
-                                problems in
-                                video games?
+                            <li><strong>Linux</strong> – Ubuntu-based Operating System (i.e. Pop!_OS or Ubuntu) version
+                                22.04
                             </li>
-                            <li>How effective are Vision Transformers (ViT) in solving computer vision problems in video
-                                games?
+                            <li><strong>Miniconda:</strong> small bootstrapped version of Anaconda. Anaconda is an
+                                open-source package
+                                and environment management system that improve the default Python environment management
+                                and pip package manager.
                             </li>
-                            <li>What performance advantages do Vision Transformers offer over Convolutional Neural
-                                Networks
-                                in video games?
+                            <li><strong>JetBrains PyCharm Professional:</strong> my favourite multipurpose Python IDE
                             </li>
+                            <li><strong>Git:</strong> version control system to manage code</li>
                         </ul>
-                    </p>
-                    <p style={{fontSize: "larger"}}>
-                        When comparing two different neural network models, it is important to establish clear criteria
-                        that
-                        can be used to evaluate the performance of each model. These criteria can include various
-                        factors
-                        such as accuracy, speed, scalability, and ease of implementation. For example, one criterion
-                        might
-                        be the accuracy of the model in correctly identifying objects within a video game environment.
-                        Another criterion could be the speed at which the model is able to process and respond to new
-                        information. </p>
-                    <p style={{fontSize: "larger"}}>
-                        CNN and ViT will be tested and compared in different video game contexts, with a focus on
-                        problems
-                        that can only be solved by image recognition neural networks. The ease of implementation for
-                        each
-                        model will also be compared in this paper.
-                        The conclusions drawn from this research will provide information on each neural network and
-                        their
-                        suitability for different video game contexts. This will help video game developers choose the
-                        most
-                        appropriate neural network model for their needs.
                     </p>
                 </LandingSection>
 
                 <LandingSection id="experimentsSection" className="text-section" color="primary">
                     <h2 className="landing-section__h2">Experiments</h2>
-                    <p style={{fontSize: "larger"}}>
-                        To evaluate the performance of the two neural networks, I conducted experiments on the popular
-                        Atari
-                        2600 video game environment using the Standard and Double DQN algorithms. The experiments were
-                        conducted using two neural networks: Convolutional Neural Networks (CNN) and Swin Transformer, a
-                        state-of-the-art vision transformer architecture.
+                    <p className="landing-section__paragraph">
+                        The present study sought to replicate the approach of Meng et al. (2022), which entailed
+                        employing the Double DQN algorithm in conjunction with a Convolutional Neural Network, and
+                        subsequently replacing the CNN with a Swin Transformer. For
+                        each experiment, identical algorithmic and hyper-parameter settings were employed.
                     </p>
-                    <p style={{fontSize: "larger"}}>
+                    <p className="landing-section__paragraph">
                         I ran experiments on two Atari games Breakout, and Pong. These experiments aimed to
-                        measure
-                        the effectiveness of the two neural networks at solving the game environments, with a focus on
-                        their
-                        ability to learn and improve their performance over time.
+                        measure the effectiveness of the two neural networks at solving the game environments, with a
+                        focus on their ability to learn and improve their performance over time.
                     </p>
-                    <p style={{fontSize: "larger"}}>
+                    <p className="landing-section__paragraph">
                         I measured the performance of each neural network by tracking the average reward and maximum
-                        score
-                        achieved during gameplay over time. The results of these experiments are analyzed and presented
-                        in
-                        the next section.
+                        score achieved during gameplay over time. The results of these experiments are analyzed and
+                        presented in the next section.
+                        The input to both the CNN and Swin Transformer networks is a stack of four grayscale frames
+                        reduced to a size of 84×84.
                     </p>
+                    <h3 className="landing-section__h3">Double Deep Q Network</h3>
+                    <p className="landing-section__paragraph">
+                        The Double Deep Q Network algorithm is the core component of the experiment. The exact
+                        hyperparameters used in the algorithm are described below.
+                    </p>
+                    <p className="landing-section__paragraph">
+                        <table className="table-hyperparmeters">
+                            <tbody>
+                            <tr>
+                                <td>Input</td>
+                                <td>4x84x84</td>
+                            </tr>
+                            <tr>
+                                <td>Optimiser</td>
+                                <td>Adam</td>
+                            </tr>
+                            <tr>
+                                <td>Adam learning rate</td>
+                                <td>0.0001</td>
+                            </tr>
+                            <tr>
+                                <td>Loss function</td>
+                                <td>Smooth L1</td>
+                            </tr>
+                            <tr>
+
+                                <td>Max timesteps</td>
+                                <td>10,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>Target update interval</td>
+                                <td>1,000</td>
+                            </tr>
+                            <tr>
+
+                                <td>Learning starts</td>
+                                <td>100,000</td>
+                            </tr>
+                            <tr>
+                                <td>Train frequency</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Replay buffer size</td>
+                                <td>10,000</td>
+                            </tr>
+                            <tr>
+                                <td>Batch size</td>
+                                <td>32</td>
+                            </tr>
+                            <tr>
+                                <td>Discount rate (gamma)</td>
+                                <td>0.99</td>
+                            </tr>
+                            <tr>
+                                <td>Exploration fraction</td>
+                                <td>0.1</td>
+                            </tr>
+                            <tr>
+                                <td>Final exploration rate (epsilon)</td>
+                                <td>0.01</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </p>
+
                     <h3 className="landing-section__h3">Convolutional Neural Network</h3>
                     <p className="landing-section--center">
-                        <img src={CnnIllustration} className="landing-section__image" alt="RL Illustration"/><br/>
-                        <i>Schematic representation of a CNN model (<a
-                            href="https://www.researchgate.net/figure/A-schematic-illustration-of-the-convolutional-neural-network-CNN-architecture-The_fig5_339892439">source</a>)
-                        </i>
+                        <img src={CnnArchitectureImg} className="landing-section__image" alt="CNN Architecture Schema"/><br/>
+                        <i>Schematic representation of the CNN model used</i>
                     </p>
-                    <p style={{fontSize: "larger"}}>
-                        Convolutional Neural Networks (CNNs) are a type of machine learning algorithm commonly used in
-                        image recognition tasks. CNNs work by learning to recognize different patterns and features in
-                        images, such as edges, corners, and textures. They do this by breaking down the image into
-                        smaller pieces called "convolutional filters," which are passed through multiple layers of the
-                        network to extract more and more complex features. The final layer of the network then uses
-                        these features to classify the image into different categories, such as "cat" or "dog". CNNs
-                        have been shown to be very effective at recognizing patterns in images and are widely used in
-                        applications such as facial recognition, autonomous vehicles, and medical imaging.
+                    <p className="landing-section__paragraph">
+                        The CNN architecture is based on the one used by Mnih et al. (2015) in their Nature paper on
+                        DQN, which includes a 32-filter convolutional layer with 8×8 filters and stride 4, a 64-filter
+                        convolutional layer with 4×4 filters and stride 2, a 64-filter convolutional layer with 3×3
+                        filters and stride 1, a fully-connected hidden layer with 512 units, and a fully-connected
+                        linear output layer with a single output for each valid action in the environment.
+                    </p>
+                    <p className="landing-section__paragraph">
+                        <table className="table-network-architecture">
+                            <tbody>
+                            <tr>
+                                <th>Layers</th>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th>Blocks each layer</th>
+                                <td>2, 3, 2</td>
+                            </tr>
+                            <tr>
+                                <th>Heads each layer</th>
+                                <td>3, 3, 6</td>
+                            </tr>
+                            <tr>
+                                <th>Patch size</th>
+                                <td>3x3</td>
+                            </tr>
+                            <tr>
+                                <th>Window size</th>
+                                <td>7x7</td>
+                            </tr>
+                            <tr>
+                                <th>Embedding dimension</th>
+                                <td>96</td>
+                            </tr>
+                            <tr>
+                                <th>MLP ratio</th>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <th>Drop path rate</th>
+                                <td>0.1</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </p>
 
                     <h3 className="landing-section__h3">Swin Transformer</h3>
                     <p className="landing-section--center">
-                        <img src={SwinTransformerIllustration} className="landing-section__image"
-                             alt="RL Illustration"/><br/>
-                        <i>Schematic representation of the Swin Transformer architecture (<a
-                            href="https://towardsdatascience.com/a-comprehensive-guide-to-swin-transformer-64965f89d14c">source</a>)
-                        </i>
+                        <img src={SwinTransformerArchitectureImg} className="landing-section__image"
+                             alt="Swin Transformer architecture schematic representation"/><br/>
+                        <i>Schematic representation of the Swin Transformer architecture</i>
                     </p>
-                    <p style={{fontSize: "larger"}}>
-                        Swin Transformer is a type of neural network architecture that uses self-attention mechanisms to
-                        process and extract features from input images. It is a variant of the more commonly known
-                        Transformer architecture, which was originally developed for natural language processing tasks.
-                        Unlike Convolutional Neural Networks, which rely on a fixed-size kernel to convolve over an
-                        image, Swin Transformer uses a hierarchical design that gradually increases the receptive field
-                        of the network as it processes the image. This allows it to capture both local and global
-                        features of an image in a more efficient and effective way, making it a promising alternative to
-                        traditional convolutional networks for image recognition tasks.
+                    <p className="landing-section__paragraph">
+                        For the Swin Transformer architecture, the complexity of the model makes finding good parameters
+                        challenging. The architecture used in this project was adapted from Meng et al. (2022) and
+                        includes three layers of Swin Blocks, each containing 2, 3, and 2 blocks and 3, 3, and 6
+                        attention heads, respectively. The patch size is set to 3×3, which yields 28×28 patches given
+                        the input size of 84×84 for the four channels. The embedding dimension for each patch is 96,
+                        resulting in a token size of 784×96 after patch embedding. The local window size is 7×7 and the
+                        windows are shifted by 3 patches for the first and third blocks. The MLP ratio is 4, indicating
+                        that the linear layers within Swin Blocks have 4 times the embedding dimension hidden units,
+                        i.e., 384. The drop path rate is set to 0.1, indicating a 10% chance that the input is kept as
+                        it is in skip connections (Meng et al. 2022).
                     </p>
-
-                    <h3 className="landing-section__h3">Deep Q Network</h3>
-                    <p style={{fontSize: "larger"}}>
-                        The Deep Q-Network (DQN) algorithm is a type of reinforcement learning method used to train
-                        agents to make decisions in an environment. The goal of the DQN algorithm is to teach an agent
-                        to select the best possible action in a given situation, based on the rewards it receives. The
-                        algorithm does this by using a neural network to estimate the value of each action in a given
-                        state, and then selecting the action with the highest estimated value. In this case, DQN will
-                        use either a CNN or a Swin Transformer. Over time, the DQN algorithm learns to improve its
-                        estimates of the value of each action, allowing it to make
-                        better decisions and achieve higher rewards. The algorithm has been shown to be effective in a
-                        variety of tasks, including playing video games and controlling robots.
-                    </p>
-                    <p className="landing-section--center">
-                        <img src={DeepQLearningAlgorithmImage} className="landing-section__image"
-                             alt="RL Illustration"/><br/>
-                        <i>Standard Deep Q-Learning algorithm (<a href="https://arxiv.org/pdf/1312.5602.pdf">source</a>)
-                        </i>
-                    </p>
-                    <p style={{fontSize: "larger"}}>
-                        For my experiments, I also used a variation of the Deep Q Network, the Double Deep
-                        Q-Network. Double DQN aims to address the issue of overestimation of action values that can
-                        occur in standard DQN. In standard DQN, the maximum action value of the next state is selected
-                        using the same neural network that is being used to estimate action values. This can lead to
-                        overestimation of action values and result in unstable training. Double DQN addresses this issue
-                        by using a separate neural network to select the action with the maximum value in the next
-                        state. This approach reduces the overestimation of action values and leads to more stable
-                        training. Essentially, Double DQN separates the selection of the best action from the estimation
-                        of its value. This modification has been shown to improve the performance of the DQN algorithm
-                        in various tasks, including playing video games.
-                    </p>
-
-                    <h3 className="landing-section__h3">Experimentation details</h3>
-                    <p style={{fontSize: "larger"}}>
-                        For each game, the CNN and the Swin Transformer models were trained and tested on the same
-                        number of steps using the same learning rate, batch size, and number of iterations.
-                        The performance of each model was evaluated based on the average score achieved during training.
-                        The hyperparameters used for the experiments were all the same (except of course for the
-                        parameters specifics to the used neural network)
-                    </p>
-
-                    <p style={{fontSize: "larger"}}>
-                        I will add more details on the specific parameters I used later. This part of the webpage is
-                        still in redaction.
+                    <p className="landing-section__paragraph">
+                        <table className="table-network-architecture">
+                            <tbody>
+                            <tr>
+                                <th>Layers</th>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th>Filters per layer</th>
+                                <td>32, 64, 64</td>
+                            </tr>
+                            <tr>
+                                <th>Strides per layer</th>
+                                <td>4, 2, 1</td>
+                            </tr>
+                            <tr>
+                                <th>Kernel size per layer</th>
+                                <td>8, 4, 3</td>
+                            </tr>
+                            <tr>
+                                <th>MLP Units</th>
+                                <td>64x7x7 = 512</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </p>
                 </LandingSection>
 
                 <LandingSection id="resultsSection" className="text-section" color="secondary">
                     <h2 className="landing-section__h2">Results</h2>
-                    <p style={{fontSize: "larger"}}>
-                        This section presents the results of training an agent on the game Pong using the Double Deep
-                        Q-Network with CNN and Swin Transformer. A link to the TensorBoard is provided for detailed
-                        comparison between the neural networks and algorithms used for each game.
+                    <p className="landing-section__paragraph">
+                        This section presents the findings of my research, in which an agent was trained on Pong and
+                        Breakout environments using the Double Deep Q-Network with both CNN and Swin Transformer
+                        architectures. For a more detailed explanation of the results, please refer to my thesis, as the
+                        content on this webpage has been kept concise.
                     </p>
                     <h3 className="landing-section__h3">Pong</h3>
-                    <h3 className="landing-section__h4">Convolutional Neural Networks</h3>
-                    <p style={{fontSize: "larger"}}>
-                        The agent trained on CNN required a relatively small training time of 7 hours and 36 minutes on
-                        a GTX 970 GPU. The hardware limitations did not pose a significant bottleneck to the agent's
-                        ability to learn to play in the Pong environment.
-                    </p>
-                    <p className="landing-section--center">
-                        <img src={CnnDDQNMeanRewardChartImg}
-                             className="landing-section__image landing-section__image--background"
-                             alt="CNN Double DQN Episode Reward Mean"/><br/>
-                        <i>Evolution of the mean reward per episode over time</i>
-                    </p>
-                    <p>
-                        The CNN agent started to converge from approximately 500,000 steps, with a stable increase until
-                        3.5 million steps where it stabilized. The curve shows a linear increase with no major dropouts
-                        even after hours of training. However, the agent did not reach a
-                        mean reward of +/- 20 as some other implementations did. This may be due to the chosen
-                        environment seed (42 in this case).
+                    <div className="chart-results">
+                        <div>
+                            <img src={PongEpisodeMeanRewardImg}
+                                 alt="Evolution of the mean reward per episode over time on Pong"/><br/>
+                            <i>Evolution of the mean reward per episode over time on Pong</i>
+                        </div>
+                        <div>
+                            <img src={PongEpisodicReturnImg}
+                                 alt="Evolution of the score per episode over time on Pong"/><br/>
+                            <i>Evolution of the score per episode over time on Pong</i>
+                        </div>
+                    </div>
+
+                    <p className="landing-section__paragraph">
+                        The CNN agent achieved good performance and required a relatively short training time of 7 hours
+                        and 36 minutes on a GTX 970 GPU. It began to converge around 500,000 steps, with a stable
+                        increase until it reached 3.5 million steps, where it stabilized. However, it did not achieve a
+                        mean reward of +/- 20.
                     </p>
 
-                    <p className="landing-section--center">
-                        <img src={CnnDDQNTrainLossChartImg}
-                             className="landing-section__image landing-section__image--background"
-                             alt="Evolution of the loss over time"/><br/>
-                        <i>Evolution of the loss, over time</i>
-                    </p>
-                    <p>
-                        The loss evolution was somewhat chaotic, even close to the end of training, with large spikes
-                        indicating that the agent was still making mistakes. However, this is likely good news as it
-                        suggests the agent was not overwriting its learning and was instead exploring and learning new
-                        behaviors.
-                    </p>
-                    <h3 className="landing-section__h4">Swin Transformer</h3>
-                    <p style={{fontSize: "larger"}}>
-                        Compared to the CNN model, the Swin Transformer model required a much longer training time of 3
-                        days and 7 hours on an RTX 3080 GPU. I also tried to train the model on my laptop, equipped
-                        with a GTX 1660 Ti but it would have taken even longer.
-                    </p>
-                    <p className="landing-section--center">
-                        <img src={SwinDDQNMeanRewardChartImg}
-                             className="landing-section__image landing-section__image--background"
-                             alt="Swin Double DQN Episode Reward Mean"/><br/>
-                        <i>Evolution of the mean reward per episode, over time</i>
-                    </p>
-                    <p>
-                        The Swin DQN agent took much longer to converge, almost 1 million steps. While the CNN model
-                        stabilized at 3.5 million steps with a mean reward of +/- 13, the Swin DQN model was still
-                        scoring in the negative at this point and only began to reach positive scores at around 4
-                        million steps. The curve was also less linear, with constant drops to a lower score for a
-                        certain amount of time before increasing again.<br/>
-                        The curve was also less linear, with constant drops to a lower score for a certain amount of
-                        time before increasing again.
-                        In the end, Swin DQN has not been able to reach the same mean
-                        reward as CNN, achieving a mean score of around ~12. However, Swin Transformer also show a
-                        constant increase, compared to CNN which stabilised for the majority of its training time.
+                    <p className="landing-section__paragraph">
+                        The Swin Transformer-based DQN agent required a substantially longer training period of 3 days
+                        and 7 hours on an RTX 3080 GPU. It only began to score positively at around 4 million steps, but
+                        showed a constant increase in performance compared to the CNN model. However, it was not able to
+                        achieve the same mean reward as the CNN model, achieving only around ~12. Its performance curve
+                        was less linear, exhibiting consistent drops to lower scores for a certain period before
+                        increasing again.
                     </p>
 
-                    <p className="landing-section--center">
-                        <img src={SwinDDQNTrainLossChartImg}
-                             className="landing-section__image landing-section__image--background"
-                             alt="Evolution of the loss over time"/><br/>
-                        <i>Evolution of the loss, over time</i>
+                    <p className="landing-section__paragraph">
+                        Also, an interesting comparison can be made between CNN and Swin, by observing the agents playing
+                        directly. The agent trained with CNN took actions in an erratic manner, whereas the Swin
+                        Transformer appeared to be smoother, despite its lower mean reward. This behavior is critical in
+                        video games since the smoother it is, the more appealing it will be to a human player. This
+                        behaviour can be seen in the video below and gives the impression that the Swin DQN agent thinks
+                        more before taking an action than the CNN agent (the agent is the right paddle, left paddle is a
+                        dummy computer AI).
+                        <iframe className="youtube-video" src="https://www.youtube.com/embed/2WXqowueAFE"
+                                title="CNN vs Swin Comparison on Atari Pong" frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen></iframe>
                     </p>
-                    <p>
-                        The loss is also quite different for Swin DQN. We can see a lower amount of spikes as time goes
-                        on,
-                        which can maybe show a more stable training.
-                    </p>
+
                     <h3 className="landing-section__h3">Breakout</h3>
-                    TODO.
+                    <div className="chart-results">
+                        <div>
+                            <img src={BreakoutEpisodeMeanRewardImg}
+                                 alt="Evolution of the mean reward per episode over time on Breakout"/><br/>
+                            <i>Evolution of the mean reward per episode over time on Breakout</i>
+                        </div>
+                        <div>
+                            <img src={BreakoutEpisodicReturnImg}
+                                 alt="Evolution of the score per episode over time on Breakout"/><br/>
+                            <i>Evolution of the score per episode over time on Breakout</i>
+                        </div>
+                    </div>
+                    <p className="landing-section__paragraph">
+                        The CNN agent was trained for 1 day and 7 hours on an NVIDIA GTX 970 GPU, while the Swin agent
+                        required a significantly longer training period of 3 days and 6 hours on an NVIDIA RTX 3080 GPU.
+                        Interestingly, the Swin Breakout agent required less time to train than the Swin Pong agent,
+                        while the CNN Breakout agent required more time than the CNN Pong agent, despite being trained
+                        on the same hardware and under the same conditions. The reasons for these results are not
+                        immediately clear and may be due to random factors rather than the neural networks themselves.
+                    </p>
+                    <p className="landing-section__paragraph">
+                        In terms of performance, the CNN agent outperformed the Swin agent in Breakout, achieving a mean
+                        reward of almost 50 and a better episodic return overhaul, while the Swin DQN agent occasionally
+                        performed better for a few episodes. Overall, the Swin agent's performance was worse than Pong,
+                        with a mean reward that was more than double that of the CNN agent. The convergence point for
+                        both agents started early in training, before 1 million steps. These results suggest that
+                        Breakout requires more than 10 million steps for proper training, although the CNN agent was
+                        able to achieve better results in less time.
+                    </p>
+                    <p className="landing-section__paragraph">
+                        Compared to Meng et al. (2022), my results on Breakout show lower scores for the first 10
+                        million steps. This difference may be due to random factors or the choice of seed. In their
+                        paper, Swin DQN and CNN DQN achieved relatively similar results, which became sparser closer to
+                        2 million steps. This suggests that the Swin agent requires more time and data to achieve
+                        optimal performance compared to the CNN agent.
+                    </p>
                 </LandingSection>
 
 
                 <LandingSection id="conclusionSection" className="text-section" color="primary">
                     <h2 className="landing-section__h2">Conclusion</h2>
-                    <p style={{fontSize: "larger"}}>
-                        Throughout this project, my main concern was to produce meaningful results. Initially, I
-                        implemented the Deep Q-Network algorithm, which is a well-known Reinforcement Learning
-                        algorithm. My plan was to try a Vision Transformer variant and to compare it to its CNN
-                        counterpart.
-                        However, I came across a paper entitled <a
-                        href="https://download.arxiv.org/pdf/2206.15269v1.pdf">"Deep Reinforcement Learning with Swin
-                        Transformer"</a>, which had already replaced the Convolutional Neural Network with the Swin
-                        Transformer in a similar algorithm. <br/>
-                        I ended up implementing the Double Deep Q-Network algorithm, while only replacing the network,
-                        as described in the paper above. The conclusion from this paper shows that Swin DQN achieved
-                        superior performance than its CNN counterpart.
-                        This is why my results ended up being still very interesting, particularly when compared to the
-                        aforementioned paper. I found that the Swin DQN algorithm performed worse than the CNN DQN
-                        algorithm in Atari Pong compared to what is mentioned in the paper.
+                    <p className="landing-section__paragraph">
+                        The primary objective of this project was to compare the performance of a Vision Transformer
+                        variant with its CNN counterpart using the Deep Q Network (DQN) algorithm, a widely recognized
+                        Reinforcement Learning (RL) algorithm. However, during the research phase, a paper titled “Deep
+                        Reinforcement Learning with Swin Transformer” (Meng et al. 2022) was encountered, which had
+                        already replaced the CNN with the Swin Transformer model. Despite this, the idea of replicating
+                        their work and comparing my results with theirs remained intriguing, especially given my limited
+                        knowledge of hyperparameter tuning if I were to try a completely different architecture.
                     </p>
-                    <p style={{fontSize: "larger"}}>
-                        Training an agent with the Swin Transformer can be achieved at the cost of increased
-                        complexity and clock time. Training an agent with Swin Transformer is computationally intensive
-                        and requires significant memory, which can be challenging for an average computer. Additionally,
-                        my algorithm was trained for much less time than the paper's algorithm (10 million steps
-                        compared to 50 million steps), and I found that the CNN version of my algorithm still performed
-                        better than the Swin Transformer version. Thus, CNN remains a viable option for high-performance
-                        algorithms when considering clock time.
+                    <p className="landing-section__paragraph">
+                        The conclusion of the Meng et al. paper showed that the Swin DQN outperformed its CNN
+                        counterpart. However, my results indicated that the CNN outperformed the Swin DQN in the two
+                        tested games, Pong and Breakout. Despite this, the results were still significant and
+                        interesting compared to the paper, indicating that the Swin Transformer's computational
+                        complexity and time requirements for training an agent are higher than those of the CNN. The
+                        higher results obtained by Meng et al. (2022) demonstrate that the Swin Transformer requires a
+                        significantly higher number of training steps.
                     </p>
-                    <p style={{fontSize: "larger"}}>
-                        Despite this, the Swin Transformer has certain advantages over the CNN that are not related to
-                        raw performance. When testing the trained agent in an environment, the agent's movement appeared
-                        smoother with the Swin Transformer than with the CNN. The CNN agent took action frenetically,
-                        while the Swin Transformer appeared to "think more" before making a move. <br/>
-                        I will provide a video illustrating this behaviour in the coming days.
+                    <p className="landing-section__paragraph">
+                        Training an agent with Swin Transformer is computationally intensive and requires significant
+                        GPU memory, making it challenging for an average computer and not feasible for consumer video
+                        games due to the low number of individuals who own such hardware. Therefore, the CNN remains a
+                        viable option for high-performance algorithms, considering the hardware of the end-user machine.
+                    </p>
+                    <p className="landing-section__paragraph">
+                        Despite this, the Swin Transformer offers certain advantages over the CNN that are not related
+                        to raw performance. A fascinating comparison can be made between the CNN and Swin by observing
+                        the agents playing directly. The agent trained with CNN took actions in an erratic manner,
+                        whereas the Swin Transformer appeared to be smoother, despite its lower mean reward. This
+                        behavior is critical in video games since the smoother it is, the more appealing it will be to a
+                        human player.
                     </p>
                 </LandingSection>
 
@@ -387,7 +519,7 @@ function Landing() {
                     <div className="landing-section-contact">
                         <div className="landing-section-contact__networks">
                             <h2 className="landing-section__h2">Contact</h2>
-                            <p style={{fontSize: "larger"}}>
+                            <p className="landing-section__paragraph">
                                 Hey, I'm <strong>Adrien Dudon</strong>, I am glad you scrolled until the end :-) !<br/>
                                 Are you interested in my project or my profile? Do not hesitate to contact me either by
                                 email or on LinkedIn. Also, have a look at my GitHub, where I show off a lot of the
@@ -407,7 +539,8 @@ function Landing() {
                             </p>
                             <p style={{fontSize: "xx-large"}}>
                                 <a className="contact-link" href="https://github.com/Deewens"
-                                   target="_blank"><FontAwesomeIcon icon={icon({name: 'github', style: "brands"})}/> <span className="contact-link--text"> GitHub</span></a>
+                                   target="_blank"><FontAwesomeIcon icon={icon({name: 'github', style: "brands"})}/>
+                                    <span className="contact-link--text"> GitHub</span></a>
                             </p>
                             <p style={{fontSize: "xx-large"}}>
                                 <a className="contact-link"

@@ -10,7 +10,6 @@ export default function ErrorPage() {
   if (isRouteErrorResponse(error)) {
     return (
       <>
-        <Header color="transparent" />
         <div className="error-page">
           <h1>Oops!</h1>
           <p>Sorry, an error has occurred.</p>
@@ -25,7 +24,6 @@ export default function ErrorPage() {
   } else {
     return (
       <>
-        <Header color="transparent" />
         <div className="error-page">
           <h1>Oops!</h1>
           <p>Sorry, an unexpected error has occurred.</p>

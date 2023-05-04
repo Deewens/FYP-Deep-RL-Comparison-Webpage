@@ -1,13 +1,27 @@
 .landing-section {
-    padding: 60px 0;
+    /*padding: 60px 300px;*/
+    /*box-sizing: border-box;*/
+    padding: 50px 300px;
 }
 
-.landing-section__title {
+.landing-section p {
+    font-size: large;
+}
+
+.landing-section__h2 {
     margin-top: 0;
-    margin-left: 10px;
     font-size: 4ex;
-    color: white;
     font-weight: normal;
+}
+
+.landing-section__h3 {
+    font-size: 3ex;
+    font-weight: normal;
+}
+
+.landing-section__h4 {
+    font-size: 2ex;
+    font-weight: bold;
 }
 
 .landing-section--color-primary {
@@ -16,4 +30,13 @@
 
 .landing-section--color-secondary {
     background-color: var(--secondary-color);
+}
+
+.loading-section--text-color-white {
+    color: white;
+}
+
+.loading-section--text-color-primary {
+    color: var(--primary-color);
+    /*color: black;*/
 }

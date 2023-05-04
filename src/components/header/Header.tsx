@@ -1,13 +1,13 @@
 import './Header.css'
 import HeaderNavItem from './HeaderNavItem'
-import { NavLink } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import {Link, NavLink} from 'react-router-dom'
+import React, {RefObject, useEffect, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 type Props = {
   color?: 'primary' | 'transparent',
-  position?: 'absolute' | 'relative'
+  position?: 'absolute' | 'relative' | 'fixed',
 }
 
 function Header(props: Props) {
@@ -29,11 +29,13 @@ function Header(props: Props) {
     return () => window.removeEventListener('resize', handleResize)
   })
 
+
   return (
     <header className={
       `header
       ${props.color === 'transparent' ? 'header--color-transparent' : 'header--color-primary'}
-      ${props.position === 'absolute' ? 'header--position-absolute' : ''}`
+      ${props.position === 'absolute' && 'header--position-absolute'}
+      ${props.position === 'fixed' && 'header--position-fixed'}`
     }>
       {
         mobileNavbar ?
@@ -49,20 +51,20 @@ function Header(props: Props) {
                 <ul
                     className={`header__nav-mobile-items`}>
                     <li><NavLink to="/"><HeaderNavItem>About</HeaderNavItem></NavLink></li>
-                    <li><NavLink to="/projects/games"><HeaderNavItem>Games</HeaderNavItem></NavLink></li>
-                    <li><NavLink to="/projects/apps"><HeaderNavItem>Applications</HeaderNavItem></NavLink></li>
+                    <li><NavLink to="/projects/games"><HeaderNavItem>Research Question</HeaderNavItem></NavLink></li>
+                    <li><NavLink to="/projects/apps"><HeaderNavItem>Experiments</HeaderNavItem></NavLink></li>
                     <li><NavLink to="/resume"><HeaderNavItem>Resume</HeaderNavItem></NavLink></li>
                 </ul>}
           </nav> :
           <nav className="header__navbar">
-            <NavLink to="/"><HeaderNavItem>About</HeaderNavItem></NavLink>
-            <NavLink to="/projects/games"><HeaderNavItem>Games</HeaderNavItem></NavLink>
-            <NavLink to="/projects/apps"><HeaderNavItem>Applications</HeaderNavItem></NavLink>
-            <NavLink to="/resume"><HeaderNavItem>Resume</HeaderNavItem></NavLink>
+            <a href="#aboutSection"><HeaderNavItem>About</HeaderNavItem></a>
+            <a href="#researchQuestionSection"><HeaderNavItem>Research Question</HeaderNavItem></a>
+            <a href="#experimentsSection"><HeaderNavItem>Experiments</HeaderNavItem></a>
+            <a href="#resultsSection"><HeaderNavItem>Results</HeaderNavItem></a>
+            <a href="#conclusionSection"><HeaderNavItem>Conclusion</HeaderNavItem></a>
+            <a href="#contactSection"><HeaderNavItem>Contact</HeaderNavItem></a>
           </nav>
       }
-
-
     </header>
   )
 }

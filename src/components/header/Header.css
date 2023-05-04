@@ -16,6 +16,10 @@
     position: absolute;
 }
 
+.header--position-fixed {
+    position: fixed;
+}
+
 .header__navbar {
     display: flex;
     justify-content: center;

@@ -9,9 +9,6 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import Landing from './components/landing/Landing'
-import GameProjects from './components/project/game-projects/GameProjects'
-import AppsProjects from './components/project/apps-projects/AppsProjects'
-import Resume from './components/resume/Resume'
 import ErrorPage from './components/timeline/ErrorPage/ErrorPage'
 
 const router = createBrowserRouter([
@@ -23,18 +20,6 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <Landing />,
-      },
-      {
-        path: 'projects/games',
-        element: <GameProjects />,
-      },
-      {
-        path: 'projects/apps',
-        element: <AppsProjects />,
-      },
-      {
-        path: 'resume',
-        element: <Resume />,
       },
     ],
   },

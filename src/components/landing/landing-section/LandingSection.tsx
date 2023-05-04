@@ -1,23 +1,26 @@
 import './LandingSection.css'
-import { ReactNode } from 'react'
+import {forwardRef, ReactNode} from 'react'
 
 type Props = {
-  color: 'primary' | 'secondary',
-  className?: string
-  children: ReactNode
+    id?: string
+    color: 'primary' | 'secondary',
+    className?: string
+    children: ReactNode
 }
 
-function LandingSection(props: Props) {
-  return (
-    <section
-      className={
-        `landing-section 
-        ${props.color === 'primary' ? 'landing-section--color-primary' : 'landing-section--color-secondary'}
-        ${props.className}`
-      }>
-      {props.children}
-    </section>
-  )
-}
+const LandingSection = forwardRef<HTMLElement, Props>(function (props: Props, ref) {
+    return (
+        <section
+            id={props.id}
+            ref={ref}
+            className={
+                `landing-section 
+                ${props.color === 'primary' ? 'landing-section--color-primary loading-section--text-color-white' : 'landing-section--color-secondary loading-section--text-color-primary'} 
+                ${props.className}`
+            }>
+            {props.children}
+        </section>
+    )
+})
 
 export default LandingSection

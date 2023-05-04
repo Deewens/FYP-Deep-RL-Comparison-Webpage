@@ -1,5 +1,5 @@
 .hero {
-    background-image: url("/src/assets/img/hero-background.jpg");
+    background-image: url("/src/assets/img/hero-background-nn.jpg");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -18,20 +18,20 @@
     justify-items: center;
     color: white;
     padding: 1rem;
+    max-height: 100%;
 }
 
-.hero__photo {
+.hero__img {
     display: block;
-    border-radius: 50%;
-    width: 350px;
+    height: 500px;
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
 }
 
 
 .hero__catchphrase {
     max-width: 100%;
-    width: 450px;
+    width: 600px;
 }
 
 .hero__title {
@@ -40,7 +40,7 @@
 }
 
 .hero__subtitle {
-    font-size: larger;
+    font-size: x-large;
 }
 
 .hero__title--bold {
@@ -53,7 +53,6 @@
     flex-direction: row;
     justify-content: flex-start;
     gap: 30px;
-    color: #047585;
 }
 
 .hero__socials--link {
@@ -62,4 +61,43 @@
 
 .hero__socials--link:hover {
     color: white;
+}
+
+.hero__button {
+    backface-visibility: hidden;
+    background-color: black;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    /*font-size: 100%;*/
+    font-size: x-large;
+    height: 50px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.hero__button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero__button:disabled {
+    cursor: default;
+}
+
+.hero__button:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }

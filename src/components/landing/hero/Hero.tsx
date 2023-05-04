@@ -28,10 +28,13 @@ const Hero = forwardRef<HTMLDivElement>(function (props, ref) {
                         </button>
                     </div>
                 </section>
-
-                <iframe src="https://giphy.com/embed/4YWdFZAl1mQ9kplqRk" frameBorder="0"
-                        className="giphy-embed hero__img" allowFullScreen></iframe>
-
+                <section className="hero__illustration">
+                    <div style={{width:"100%", height:"0", paddingBottom: "100%", position: "relative"}}>
+                        <iframe src="https://giphy.com/embed/4YWdFZAl1mQ9kplqRk" width="100%" height="100%"
+                                style={{position: "absolute"}} frameBorder="0" className="giphy-embed"
+                                allowFullScreen></iframe>
+                    </div>
+                </section>
             </div>
         </div>
     )

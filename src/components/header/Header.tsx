@@ -1,7 +1,7 @@
 import './Header.css'
 import HeaderNavItem from './HeaderNavItem'
 import {Link, NavLink} from 'react-router-dom'
-import React, {RefObject, useEffect, useState} from 'react'
+import React, {RefObject, useEffect, useRef, useState} from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {solid} from '@fortawesome/fontawesome-svg-core/import.macro'
 
@@ -14,13 +14,14 @@ function Header(props: Props) {
     const [mobileNavbar, setMobileNavbar] = useState(false)
     const [mobileNavbarOpen, setMobileNavbarOpen] = useState(false)
 
+
     useEffect(() => {
         handleResize()
 
         function handleResize() {
-            if (window.innerWidth < 600) {
+            if (window.innerWidth <= 830) {
                 setMobileNavbar(true)
-            } else if (window.innerWidth > 600) {
+            } else if (window.innerWidth > 830) {
                 setMobileNavbar(false)
             }
         }
@@ -50,15 +51,16 @@ function Header(props: Props) {
                         {mobileNavbarOpen &&
                             <ul
                                 className={`header__nav-mobile-items`}>
-                                <li><NavLink to="/"><HeaderNavItem>About</HeaderNavItem></NavLink></li>
-                                <li><NavLink to="/projects/games"><HeaderNavItem>Research
-                                    Question</HeaderNavItem></NavLink></li>
-                                <li><NavLink to="/projects/apps"><HeaderNavItem>Experiments</HeaderNavItem></NavLink>
+                                <li><a href={"#aboutSection"} onClick={() => setMobileNavbarOpen(prev => !prev)}><HeaderNavItem>About</HeaderNavItem></a></li>
+                                <li><a href={"#technologiesSection"} onClick={() => setMobileNavbarOpen(prev => !prev)}><HeaderNavItem>Technologies</HeaderNavItem></a>
                                 </li>
-                                <li><NavLink to="/resume"><HeaderNavItem>Resume</HeaderNavItem></NavLink></li>
+                                <li><a href={"#experimentsSection"} onClick={() => setMobileNavbarOpen(prev => !prev)}><HeaderNavItem>Experiments</HeaderNavItem></a></li>
+                                <li><a href={"#resultsSection"} onClick={() => setMobileNavbarOpen(prev => !prev)}><HeaderNavItem>Results</HeaderNavItem></a></li>
+                                <li><a href={"#conclusionSection"} onClick={() => setMobileNavbarOpen(prev => !prev)}><HeaderNavItem>Conclusion</HeaderNavItem></a></li>
+                                <li><a href={"#contactSection"} onClick={() => setMobileNavbarOpen(prev => !prev)}><HeaderNavItem>Contact</HeaderNavItem></a></li>
                             </ul>}
                     </nav> :
-                    <nav className="header__navbar">
+                    <nav className={`header__navbar`}>
                         <a href={"#aboutSection"}><HeaderNavItem>About</HeaderNavItem></a>
                         <a href={"#technologiesSection"}><HeaderNavItem>Technologies</HeaderNavItem></a>
                         <a href={"#experimentsSection"}><HeaderNavItem>Experiments</HeaderNavItem></a>

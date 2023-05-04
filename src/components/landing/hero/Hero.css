@@ -4,34 +4,37 @@
     background-position: center;
     background-size: cover;
     height: 100vh;
-
     display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .hero__main-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    row-gap: 1rem;
-    align-items: center;
-    justify-items: center;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    column-gap: 10rem;
     color: white;
-    padding: 1rem;
+    padding: 0 1rem;
     max-height: 100%;
+    max-width: 100%;
+}
+
+.hero__illustration {
+    width: 500px;
 }
 
 .hero__img {
     display: block;
     height: 500px;
-    max-width: 100%;
     max-height: 100%;
+    max-width: 100%;
 }
-
 
 .hero__catchphrase {
     max-width: 100%;
     width: 600px;
+    margin-bottom: 5px
 }
 
 .hero__title {
@@ -74,12 +77,12 @@
     cursor: pointer;
     /*font-size: 100%;*/
     font-size: x-large;
-    height: 50px;
+    min-height: 50px;
     line-height: 1.15;
     margin: 12px 0 0;
     outline: none;
     overflow: hidden;
-    padding: 0 25px;
+    padding: 5px 25px;
     position: relative;
     text-align: center;
     text-transform: none;
@@ -100,4 +103,19 @@
 
 .hero__button:focus {
     box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+@media screen and (max-width: 600px) {
+    .hero__title {
+        font-weight: normal;
+        font-size: xx-large;
+    }
+
+    .hero__subtitle {
+        font-size: large;
+    }
+
+    .hero__button {
+        font-size: large;
+    }
 }
